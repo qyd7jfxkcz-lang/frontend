@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Admin Dashboard • Academic Support Chatbot</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand__title">Admin Dashboard</div>
+          <div class="brand__subtitle">Local analytics from browser storage</div>
+        </div>
+        <div class="topbar__actions">
+          <a class="btn btn--ghost" href="../index.html">Chat</a>
+          <button class="btn" id="logoutBtn">Logout</button>
+        </div>
+      </header>
+      
+
+      <main class="main" style="grid-template-columns: 1fr;">
+        <section class="card">
+          <div class="card__title">Overview</div>
+          <div class="card__text" id="overviewText">Loading…</div>
+          <div style="height:12px;"></div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:flex-end;">
+            <label class="field" style="min-width: 220px;">
+              <span class="field__label">Filter by user</span>
+              <select id="userFilter" class="select"></select>
+            </label>
+            <label class="field" style="min-width: 220px;">
+              <span class="field__label">Filter by mode</span>
+              <select id="modeFilter" class="select">
+                <option value="(all)" selected>(all)</option>
+                <option value="local">local</option>
+                <option value="api">api</option>
+              </select>
+            </label>
+            <label class="field" style="min-width: 220px;">
+              <span class="field__label">Filter by feedback</span>
+              <select id="feedbackFilter" class="select">
+                <option value="(all)" selected>(all)</option>
+                <option value="up">👍 helpful</option>
+                <option value="down">👎 not helpful</option>
+                <option value="none">(none)</option>
+              </select>
+            </label>
+            <label class="field" style="min-width: 220px;">
+              <span class="field__label">Search text</span>
+              <input id="searchInput" class="select" type="text" placeholder="contains…" />
+            </label>
+          </div>
+          <div style="height:12px;"></div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <button class="btn btn--primary" id="exportBtn">Export JSON</button>
+            <button class="btn" id="downloadCsvBtn">Download CSV</button>
+            <button class="btn" id="refreshBtn">Refresh</button>
+            <button class="btn" id="clearBtn" style="border-color: rgba(255,77,109,0.45);">Clear logs</button>
+          </div>
+        </section>
+
+        <div style="height:12px;"></div>
+
+        <section class="card">
+          <div class="card__title">Counts</div>
+          <div class="card__text">By intent, language, and source.</div>
+          <div style="height:14px;"></div>
+          <div class="main" style="padding:0; margin:0; width:100%; grid-template-columns: 1fr 1fr; gap:12px;">
+            <div class="card" style="margin:0;">
+              <div class="card__title">Top intents</div>
+              <canvas id="intentChart" width="900" height="320" style="width:100%; height:auto;"></canvas>
+              <div id="intentTable" class="meta"></div>
+            </div>
+            <div class="card" style="margin:0;">
+              <div class="card__title">Language & source</div>
+              <canvas id="langChart" width="900" height="320" style="width:100%; height:auto;"></canvas>
+              <div id="langTable" class="meta"></div>
+            </div>
+          </div>
+        </section>
+
+        <div style="height:12px;"></div>
+
+        <section class="card">
+          <div class="card__title">Top users</div>
+          <div class="card__text">Who is using the bot (local-only).</div>
+          <div style="height:14px;"></div>
+          <canvas id="userChart" width="900" height="260" style="width:100%; height:auto;"></canvas>
+          <div id="userTable" class="meta"></div>
+        </section>
+
+        <div style="height:12px;"></div>
+
+        <section class="card">
+          <div class="card__title">Recent chats</div>
+          <div class="card__text">Last 50 entries (local only).</div>
+          <div style="height:12px;"></div>
+          <div id="recent" class="card__text"></div>
+        </section>
+
+        <div style="height:12px;"></div>
+
+        <section class="card">
+          <div class="card__title">Unresolved (👎 / fallback)</div>
+          <div class="card__text">Messages marked “not helpful” or frequent fallback intent. Use this to improve dataset/rules.</div>
+          <div style="height:12px;"></div>
+          <div id="unresolved" class="card__text"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="../assets/admin.js"></script>
+  </body>
+</html>
+
+

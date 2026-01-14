@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Intelligent Academic Support Chatbot</title>
+    <meta name="description" content="Bilingual academic support chatbot (English/Arabic) — rules-first with optional API mode." />
+    <link rel="stylesheet" href="./assets/styles.css" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand__row">
+            <img class="brand__logo" src="./assets/icon.svg" alt="University logo" />
+            <div>
+          <div class="brand__title">Intelligent Academic Support Chatbot</div>
+          <div class="brand__subtitle">Bilingual demo (English / العربية) — frontend-only</div>
+            </div>
+          </div>
+        </div>
+        <div class="topbar__actions">
+          <label class="field">
+            <span class="field__label">Name</span>
+            <input id="nameInput" class="select" type="text" placeholder="Guest" autocomplete="nickname" />
+          </label>
+          <label class="field">
+            <span class="field__label">Language</span>
+            <select id="langSelect" class="select">
+              <option value="auto" selected>Auto</option>
+              <option value="en">English</option>
+              <option value="ar">العربية</option>
+            </select>
+          </label>
+          <label class="field">
+            <span class="field__label">Mode</span>
+            <select id="modeSelect" class="select">
+              <option value="local" selected>Local dataset</option>
+              <option value="api">API</option>
+            </select>
+          </label>
+          <button class="btn btn--ghost" id="themeToggleBtn" type="button" aria-label="Toggle theme">Theme</button>
+          <button class="btn btn--ghost" id="installBtn" type="button" aria-label="Install app" hidden>Install</button>
+          <a class="btn btn--ghost" href="./admin/analytics.html">Analytics</a>
+          <a class="btn btn--ghost" href="./admin/login.html">Admin</a>
+        </div>
+      </header>
+
+      <main class="main">
+        <section class="chat">
+          <div class="chat__meta">
+            <div class="chat__status" id="statusLine" role="status" aria-live="polite">Loading dataset…</div>
+            <div class="chat__metaActions">
+              <button class="btn btn--ghost btn--sm" type="button" id="clearBtn">Clear</button>
+            </div>
+          </div>
+          <div class="chat__messages" id="messages"></div>
+          <div class="quickReplies" id="quickReplies" hidden></div>
+          <div class="typing" id="typing" hidden>
+            <div class="typing__dots" aria-hidden="true">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="typing__text">Assistant is typing…</div>
+          </div>
+
+          <form class="composer" id="composer">
+            <input id="fileInput" type="file" hidden />
+            <button class="btn btn--ghost btn--sm" type="button" id="attachBtn" aria-label="Attach text file">Attach</button>
+            <textarea
+              id="prompt"
+              class="composer__input"
+              rows="1"
+              autocomplete="off"
+              placeholder="Type your question / اكتب سؤالك هنا…"
+              aria-label="Message"
+            ></textarea>
+            <button class="btn btn--primary" type="submit" aria-label="Send message">Send</button>
+          </form>
+
+          <div class="composer__below" id="composerBelow" hidden>
+            <span class="attachmentChip" id="attachmentChip">
+              <span id="attachmentLabel">Attached</span>
+              <button class="iconBtn" type="button" id="removeAttachmentBtn" aria-label="Remove attachment">×</button>
+            </span>
+          </div>
+
+          <button class="scrollFab" id="scrollFab" type="button" aria-label="Scroll to bottom" hidden>↓</button>
+        </section>
+
+        <aside class="side">
+          <div class="card">
+            <div class="card__title">Quick topics</div>
+            <div class="chips">
+              <button class="chip" data-q="When does registration open?">Registration dates</button>
+              <button class="chip" data-q="Exam schedule for this semester">Exam timetable</button>
+              <button class="chip" data-q="How to calculate GPA?">GPA</button>
+              <button class="chip" data-q="Off campus access to journals">Library access</button>
+              <button class="chip" data-q="متى يبدأ التسجيل؟">متى يبدأ التسجيل؟</button>
+              <button class="chip" data-q="وين ألقى جدول الامتحانات؟">جدول الامتحانات</button>
+              <button class="chip" data-q="كيف ينحسب المعدل؟">حساب المعدل</button>
+              <button class="chip" data-q="الوصول للمجلات من البيت">مصادر المكتبة</button>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card__title">Privacy note</div>
+            <div class="card__text">
+              This demo stores chat analytics locally in your browser (<code>localStorage</code>).
+              Admin dashboard reads the same local data. Frontend-only auth is not secure.
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card__title">Profile</div>
+            <div class="card__text">Optional: saved locally to personalize suggestions.</div>
+            <div class="formGrid">
+              <label class="field">
+                <span class="field__label">Program</span>
+                <input id="programInput" class="select" type="text" placeholder="e.g., Computer Science" />
+              </label>
+              <label class="field">
+                <span class="field__label">Level</span>
+                <select id="levelSelect" class="select">
+                  <option value="" selected>(not set)</option>
+                  <option value="foundation">Foundation</option>
+                  <option value="undergrad">Undergraduate</option>
+                  <option value="grad">Graduate</option>
+                </select>
+              </label>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card__title">API settings</div>
+            <div class="card__text">
+              Use these only if you run the backend API (<code>backend/app/api.py</code>).
+            </div>
+            <div class="formGrid">
+              <label class="field">
+                <span class="field__label">API URL</span>
+                <input id="apiUrlInput" class="select" type="url" placeholder="http://127.0.0.1:5000/chat" />
+              </label>
+              <label class="field">
+                <span class="field__label">API key (optional)</span>
+                <input id="apiKeyInput" class="select" type="password" placeholder="x-api-key" />
+              </label>
+            </div>
+            <div class="apiHealth" id="apiHealth" aria-live="polite"></div>
+          </div>
+
+          <div class="card">
+            <div class="card__title">Tips</div>
+            <div class="card__text">
+              Press <code>Enter</code> to send. Use <code>Shift</code>+<code>Enter</code> for a new line.
+              Switch <b>Mode</b> to <b>API</b> to use the backend if it's running.
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card__title">Export</div>
+            <div class="card__text">Download your local chat logs.</div>
+            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;">
+              <button class="btn btn--primary" type="button" id="exportJsonBtn">Export JSON</button>
+              <button class="btn" type="button" id="exportCsvBtn">Export CSV</button>
+            </div>
+          </div>
+        </aside>
+      </main>
+
+      <footer class="footer">
+        <span>Dataset: <code>backend/data/data.json</code></span>
+        <span class="footer__sep">•</span>
+        <span><a href="../docs/report.pdf" target="_blank" rel="noreferrer">Project report (PDF)</a></span>
+      </footer>
+    </div>
+
+    <script src="./assets/app.js"></script>
+  </body>
+</html>
+
+

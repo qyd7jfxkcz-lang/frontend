@@ -1,0 +1,17 @@
+{
+  "name": "Academic Support Chatbot",
+  "short_name": "AcadChat",
+  "start_url": "/frontend/index.html",
+  "display": "standalone",
+  "background_color": "#0b1220",
+  "theme_color": "#7c5cff",
+  "icons": [
+    {
+      "src": "/frontend/assets/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
+
+

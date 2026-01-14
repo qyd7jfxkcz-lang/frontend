@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Advanced Analytics • Academic Support Chatbot</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+    <style>
+      .analytics-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 16px;
+        margin: 20px 0;
+      }
+      .stat-card {
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 20px;
+        text-align: center;
+      }
+      .stat-value {
+        font-size: 32px;
+        font-weight: 700;
+        color: var(--accent);
+        margin: 10px 0;
+      }
+      .stat-label {
+        font-size: 13px;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      .chart-container {
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 20px;
+        margin: 20px 0;
+      }
+      .chart-title {
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 15px;
+      }
+      .bar-chart {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .bar-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .bar-label {
+        min-width: 120px;
+        font-size: 13px;
+        color: var(--text);
+      }
+      .bar-fill {
+        flex: 1;
+        height: 24px;
+        background: linear-gradient(90deg, var(--accent), var(--accent-2));
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding-right: 8px;
+        color: white;
+        font-size: 12px;
+        font-weight: 600;
+      }
+      .loading {
+        text-align: center;
+        padding: 40px;
+        color: var(--muted);
+      }
+      .error {
+        background: rgba(255, 77, 109, 0.15);
+        border: 1px solid rgba(255, 77, 109, 0.4);
+        border-radius: var(--radius);
+        padding: 16px;
+        color: var(--danger);
+        margin: 20px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand__title">Advanced Analytics Dashboard</div>
+          <div class="brand__subtitle">NLP-powered insights and conversation analytics</div>
+        </div>
+        <div class="topbar__actions">
+          <a class="btn btn--ghost" href="../index.html">Chat</a>
+          <a class="btn btn--ghost" href="dashboard.html">Admin</a>
+          <button class="btn" id="refreshBtn">Refresh</button>
+        </div>
+      </header>
+
+      <main class="main" style="grid-template-columns: 1fr; max-width: 1400px; margin: 0 auto;">
+        <div id="loading" class="loading">Loading analytics...</div>
+        <div id="error" class="error" hidden></div>
+
+        <div id="content" hidden>
+          <!-- Key Metrics -->
+          <div class="analytics-grid">
+            <div class="stat-card">
+              <div class="stat-label">Total Conversations</div>
+              <div class="stat-value" id="totalConversations">0</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">Total Messages</div>
+              <div class="stat-value" id="totalMessages">0</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">Unique Users</div>
+              <div class="stat-value" id="uniqueUsers">0</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">Avg Confidence</div>
+              <div class="stat-value" id="avgConfidence">0%</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">Avg Response Time</div>
+              <div class="stat-value" id="avgResponseTime">0ms</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">User Satisfaction</div>
+              <div class="stat-value" id="userSatisfaction">0%</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">Unresolved Queries</div>
+              <div class="stat-value" id="unresolvedQueries">0</div>
+            </div>
+          </div>
+
+          <!-- Top Intents -->
+          <div class="chart-container">
+            <div class="chart-title">Top Intents (Last 30 Days)</div>
+            <div class="bar-chart" id="topIntents"></div>
+          </div>
+
+          <!-- Intent Distribution -->
+          <div class="chart-container">
+            <div class="chart-title">Intent Distribution</div>
+            <div class="bar-chart" id="intentDistribution"></div>
+          </div>
+
+          <!-- Source Distribution -->
+          <div class="chart-container">
+            <div class="chart-title">Response Source Distribution</div>
+            <div class="bar-chart" id="sourceDistribution"></div>
+          </div>
+
+          <!-- Language Distribution -->
+          <div class="chart-container">
+            <div class="chart-title">Language Distribution</div>
+            <div class="bar-chart" id="languageDistribution"></div>
+          </div>
+
+          <!-- Sentiment Distribution -->
+          <div class="chart-container">
+            <div class="chart-title">Sentiment Analysis</div>
+            <div class="bar-chart" id="sentimentDistribution"></div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script>
+      const API_URL = localStorage.getItem('iasc_api_url_v1') || 'http://127.0.0.1:5000';
+      const API_KEY = localStorage.getItem('iasc_api_key_v1') || '';
+
+      async function fetchAnalytics() {
+        try {
+          const headers = {};
+          if (API_KEY) {
+            headers['x-api-key'] = API_KEY;
+          }
+
+          const response = await fetch(`${API_URL}/analytics/summary?days=30`, { headers });
+          if (!response.ok) {
+            throw new Error(`API error: ${response.status}`);
+          }
+          return await response.json();
+        } catch (e) {
+          throw new Error(`Failed to fetch analytics: ${e.message}`);
+        }
+      }
+
+      function renderBarChart(containerId, data, maxValue) {
+        const container = document.getElementById(containerId);
+        if (!container || !data) return;
+
+        const max = maxValue || Math.max(...Object.values(data));
+        container.innerHTML = '';
+
+        const sorted = Object.entries(data).sort((a, b) => b[1] - a[1]);
+
+        for (const [label, value] of sorted) {
+          const percentage = max > 0 ? (value / max) * 100 : 0;
+          const item = document.createElement('div');
+          item.className = 'bar-item';
+          item.innerHTML = `
+            <div class="bar-label">${label}</div>
+            <div class="bar-fill" style="width: ${percentage}%">
+              ${value}
+            </div>
+          `;
+          container.appendChild(item);
+        }
+      }
+
+      function renderTopIntents(containerId, intents) {
+        const container = document.getElementById(containerId);
+        if (!container || !intents) return;
+
+        container.innerHTML = '';
+        const max = intents.length > 0 ? Math.max(...intents.map(i => i.count)) : 1;
+
+        for (const item of intents) {
+          const percentage = (item.count / max) * 100;
+          const div = document.createElement('div');
+          div.className = 'bar-item';
+          div.innerHTML = `
+            <div class="bar-label">${item.intent}</div>
+            <div class="bar-fill" style="width: ${percentage}%">
+              ${item.count}
+            </div>
+          `;
+          container.appendChild(div);
+        }
+      }
+
+      async function loadAnalytics() {
+        const loading = document.getElementById('loading');
+        const error = document.getElementById('error');
+        const content = document.getElementById('content');
+
+        loading.hidden = false;
+        error.hidden = true;
+        content.hidden = true;
+
+        try {
+          const data = await fetchAnalytics();
+
+          // Update metrics
+          document.getElementById('totalConversations').textContent = data.total_conversations || 0;
+          document.getElementById('totalMessages').textContent = data.total_messages || 0;
+          document.getElementById('uniqueUsers').textContent = data.unique_users || 0;
+          document.getElementById('avgConfidence').textContent = 
+            data.avg_confidence ? `${(data.avg_confidence * 100).toFixed(1)}%` : '0%';
+          document.getElementById('avgResponseTime').textContent = 
+            data.avg_response_time_ms ? `${Math.round(data.avg_response_time_ms)}ms` : '0ms';
+          document.getElementById('userSatisfaction').textContent = 
+            data.user_satisfaction ? `${(data.user_satisfaction * 100).toFixed(1)}%` : '0%';
+          document.getElementById('unresolvedQueries').textContent = data.unresolved_queries || 0;
+
+          // Render charts
+          renderTopIntents('topIntents', data.top_intents);
+          renderBarChart('intentDistribution', data.intent_distribution);
+          renderBarChart('sourceDistribution', data.source_distribution);
+          renderBarChart('languageDistribution', data.language_distribution);
+          renderBarChart('sentimentDistribution', data.sentiment_distribution);
+
+          loading.hidden = true;
+          content.hidden = false;
+        } catch (e) {
+          loading.hidden = true;
+          error.hidden = false;
+          error.textContent = e.message;
+        }
+      }
+
+      document.getElementById('refreshBtn').addEventListener('click', loadAnalytics);
+      loadAnalytics();
+      // Auto-refresh every 30 seconds
+      setInterval(loadAnalytics, 30000);
+    </script>
+  </body>
+</html>
+

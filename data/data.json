@@ -1,0 +1,1451 @@
+{
+  "dataset_name": "mock_university_intents_bilingual",
+  "university": "Mock University",
+  "languages": ["en", "ar"],
+  "schema_version": "0.2.0",
+  "license": "internal-demo",
+  "notes": "Bilingual (EN/AR) mock dataset for intent classification + templated responses. Expand/replace with official university data before production use.",
+  "intents": [
+    {
+      "tag": "greeting",
+      "category": "general",
+      "patterns": {
+        "en": [
+          "hi",
+          "hello",
+          "hey",
+          "good morning",
+          "good afternoon",
+          "good evening",
+          "hi there",
+          "hello there",
+          "hey chatbot",
+          "can you help me",
+          "i need help",
+          "are you available"
+        ],
+        "ar": [
+          "مرحبا",
+          "أهلا",
+          "السلام عليكم",
+          "صباح الخير",
+          "مساء الخير",
+          "كيف حالك",
+          "هل يمكنك مساعدتي",
+          "أحتاج مساعدة",
+          "مرحباً بوت",
+          "هل أنت موجود",
+          "أريد أن أسأل سؤال",
+          "عندي استفسار"
+        ]
+      },
+      "responses": {
+        "en": [
+          "Hi! How can I help with your academic questions today?",
+          "Hello — what do you need help with (registration, exams, policies, or library access)?",
+          "Hey! Ask me about course registration, exam schedules, grading/policies, or library resources."
+        ],
+        "ar": [
+          "مرحباً! كيف يمكنني مساعدتك في الاستفسارات الأكاديمية اليوم؟",
+          "أهلاً — هل سؤالك عن التسجيل، الامتحانات، اللوائح/الدرجات، أم المكتبة والموارد؟",
+          "مرحباً! اسألني عن تسجيل المقررات، جداول الامتحانات، السياسات/الدرجات، أو موارد المكتبة."
+        ]
+      }
+    },
+    {
+      "tag": "goodbye",
+      "category": "general",
+      "patterns": {
+        "en": [
+          "bye",
+          "goodbye",
+          "see you",
+          "see you later",
+          "thanks bye",
+          "talk later",
+          "exit",
+          "quit",
+          "that's all",
+          "no that's it",
+          "good night",
+          "bye for now"
+        ],
+        "ar": [
+          "مع السلامة",
+          "وداعاً",
+          "أراك لاحقاً",
+          "سلام",
+          "شكراً مع السلامة",
+          "هذا كل شيء",
+          "خلاص",
+          "انهاء",
+          "أغلق",
+          "تصبح على خير",
+          "وداع",
+          "إلى اللقاء"
+        ]
+      },
+      "responses": {
+        "en": [
+          "Goodbye! If you have more questions, feel free to come back.",
+          "See you later — good luck with your studies!",
+          "Bye! I’m here anytime you need academic help."
+        ],
+        "ar": [
+          "مع السلامة! إذا لديك أسئلة أخرى يمكنك العودة في أي وقت.",
+          "إلى اللقاء — بالتوفيق في دراستك!",
+          "وداعاً! أنا هنا دائماً لمساعدتك في الأمور الأكاديمية."
+        ]
+      }
+    },
+    {
+      "tag": "thanks",
+      "category": "general",
+      "patterns": {
+        "en": [
+          "thanks",
+          "thank you",
+          "thx",
+          "appreciate it",
+          "that's helpful",
+          "great thanks",
+          "thanks a lot",
+          "perfect thank you",
+          "awesome thanks",
+          "much appreciated",
+          "thank you so much",
+          "you helped me"
+        ],
+        "ar": [
+          "شكراً",
+          "شكرا",
+          "شكراً لك",
+          "مشكور",
+          "مشكورين",
+          "يعطيك العافية",
+          "جزاك الله خير",
+          "ممتاز شكراً",
+          "شكراً جزيلاً",
+          "أفدتني",
+          "الله يعطيك العافية",
+          "تسلم"
+        ]
+      },
+      "responses": {
+        "en": [
+          "You’re welcome!",
+          "Happy to help — anything else you want to check?",
+          "Anytime. Want to ask about exams, registration, policies, or library resources?"
+        ],
+        "ar": [
+          "على الرحب والسعة!",
+          "سعيد بالمساعدة — هل لديك أي استفسار آخر؟",
+          "في أي وقت. هل تريد السؤال عن الامتحانات، التسجيل، السياسات/الدرجات، أو المكتبة؟"
+        ]
+      }
+    },
+    {
+      "tag": "fallback",
+      "category": "general",
+      "patterns": {
+        "en": [
+          "i don't know",
+          "this is unrelated",
+          "tell me a joke",
+          "what is the weather",
+          "who are you",
+          "random question",
+          "help",
+          "i need something else",
+          "can you do my homework",
+          "write my assignment",
+          "give me answers to the exam",
+          "hack the portal"
+        ],
+        "ar": [
+          "ما أعرف",
+          "سؤال خارج الموضوع",
+          "احكي نكتة",
+          "كيف الطقس",
+          "من أنت",
+          "سؤال عشوائي",
+          "ساعدني",
+          "أحتاج شيء ثاني",
+          "اكتب لي الواجب",
+          "اعطني إجابات الامتحان",
+          "اهكر البوابة",
+          "هذا ليس عن الجامعة"
+        ]
+      },
+      "responses": {
+        "en": [
+          "I can help with academic questions (registration, exams, policies/grading, library). What topic are you asking about?",
+          "I’m not sure I can help with that. Could you rephrase your question or pick a topic like registration, exams, policies, or library access?",
+          "I can’t help with that request, but I can help explain policies and procedures. What academic issue are you facing?"
+        ],
+        "ar": [
+          "يمكنني المساعدة في الاستفسارات الأكاديمية (التسجيل، الامتحانات، السياسات/الدرجات، المكتبة). ما الموضوع الذي تسأل عنه؟",
+          "لست متأكداً أنني أستطيع المساعدة في هذا. هل يمكنك إعادة صياغة السؤال أو اختيار موضوع مثل التسجيل أو الامتحانات أو السياسات أو الوصول للمكتبة؟",
+          "لا أستطيع تنفيذ هذا الطلب، لكن يمكنني شرح السياسات والإجراءات. ما المشكلة الأكاديمية التي تواجهها؟"
+        ]
+      }
+    },
+    {
+      "tag": "course_registration_deadline",
+      "category": "course_registration",
+      "patterns": {
+        "en": [
+          "when does registration open",
+          "when does course registration start",
+          "registration start date",
+          "registration deadline",
+          "when is the last day to register",
+          "when can i enroll in classes",
+          "enrollment dates for next semester",
+          "what is the registration period",
+          "course enrollment window",
+          "how long do we have to register",
+          "when can i register for spring",
+          "add deadline for registration",
+          "when is registration for next term",
+          "when can i register again",
+          "registration opens when",
+          "enrollment appointment time",
+          "what is my registration slot",
+          "my registration window",
+          "when does add/drop start",
+          "add drop deadline",
+          "when is the add/drop deadline",
+          "registration dates for freshmen",
+          "registration dates for seniors"
+        ],
+        "ar": [
+          "متى يبدأ التسجيل",
+          "متى يفتح التسجيل",
+          "موعد بدء التسجيل",
+          "آخر موعد للتسجيل",
+          "متى آخر يوم أسجل فيه",
+          "فترة التسجيل",
+          "متى أقدر أسجل مواد",
+          "مواعيد التسجيل للترم القادم",
+          "نافذة التسجيل",
+          "متى ينتهي التسجيل",
+          "موعد تسجيل الفصل",
+          "موعد التسجيل الدراسي",
+          "متى التسجيل للترم الجاي",
+          "متى يفتح تسجيل المواد",
+          "موعد الإضافة والحذف",
+          "آخر موعد للإضافة والحذف",
+          "آخر يوم للتسجيل",
+          "وش نافذة التسجيل حقي",
+          "موعد أحقية التسجيل",
+          "موعد تسجيلي في البوابة"
+        ]
+      },
+      "responses": {
+        "en": [
+          "For Spring 2026: Registration opens in phases starting November 15, 2025. Seniors (90+ credits) and graduate students: November 15-18. Juniors (60-89 credits): November 19-22. Sophomores (30-59 credits): November 23-26. Freshmen (0-29 credits): November 27-30. Add/drop period: January 13-20, 2026. Check your student portal for your exact time slot. Late registration (with $75 fee) available January 21-27, 2026 with advisor approval.",
+          "Spring 2026 registration timeline: Early registration for seniors/graduates opens November 15, 2025 at 8:00 AM. Regular registration runs through November 30. Add/drop period is January 13-20, 2026 (first week of classes). Your specific appointment time appears in your student portal under \"Registration → Enrollment Appointment\". Make sure all holds are cleared before your window opens.",
+          "Check your enrollment appointment in the student portal — that is your official registration window. Navigate to: Student Portal → Registration → Enrollment Appointment/Time Ticket. This screen shows your exact registration start date, time, and end date. Registration appointments are assigned based on your academic level and credit hours. Make sure to clear any holds (financial, academic, or administrative) before your registration window opens.",
+          "Best next step: open the student portal → Registration → Enrollment Appointment/Time Ticket. That screen is the source of truth for your window. Registration typically opens at 8:00 AM on your assigned date and remains open until the end of the add/drop period. If you encounter technical issues during registration, contact IT support immediately. For questions about course availability or prerequisites, consult with your academic advisor or the department offering the course.",
+          "If you missed the deadline, check whether late registration is allowed for your program and contact advising/registrar for options. Late registration usually requires: (1) advisor approval, (2) payment of a late registration fee (typically $50-100), and (3) availability of seats in desired courses. Late registration is typically only available during the first week of classes. After that, you may need to wait until the next semester or apply for special permission through your department."
+        ],
+        "ar": [
+          "مواعيد التسجيل تختلف حسب البرنامج والمستوى. عادةً يفتح التسجيل على مراحل: طلاب السنة الأخيرة وطلاب الدراسات العليا أولاً، ثم طلاب السنة الثالثة والثانية والأولى. راجع التقويم الأكاديمي المنشور على موقع الجامعة وبوابة الطالب لمعرفة نافذة التسجيل الخاصة بك. البوابة ستعرض تاريخ ووقت موعد التسجيل المحدد لك، وهو نافذة التسجيل الرسمية. قد يكون التسجيل المتأخر متاحاً بموافقة المرشد ورسوم، لكنه يعتمد على توفر المقاعد.",
+          "ستجد تاريخ بداية/نهاية التسجيل في التقويم الأكاديمي، والذي يُنشر عادةً قبل 2-3 أشهر من بداية كل فصل دراسي. إذا ذكرت الفصل (مثل ربيع 2026) أساعدك أين تبحث بالضبط. فترة التسجيل عادةً تستمر 2-3 أسابيع، مع تمديد فترة الإضافة والحذف لأسبوع إضافي بعد بداية المحاضرات. نافذة التسجيل الخاصة بك تُحدد بناءً على وضعك الأكاديمي وعدد الساعات المعتمدة المكتملة ومتطلبات البرنامج.",
+          "راجع موعد/أحقية التسجيل في بوابة الطالب — هذه هي النافذة الرسمية للتسجيل. انتقل إلى: بوابة الطالب → التسجيل → أحقية/موعد التسجيل. هذه الشاشة تعرض تاريخ ووقت بداية التسجيل المحدد لك وتاريخ النهاية. مواعيد التسجيل تُحدد بناءً على مستواك الأكاديمي وعدد الساعات المعتمدة. تأكد من حل أي حظر (مالي، أكاديمي، أو إداري) قبل فتح نافذة التسجيل.",
+          "أفضل خطوة: افتح بوابة الطالب → التسجيل → أحقية/موعد التسجيل. هذه الصفحة هي المرجع الرسمي لنافذة التسجيل. التسجيل عادةً يفتح الساعة 8:00 صباحاً في التاريخ المحدد لك ويبقى مفتوحاً حتى نهاية فترة الإضافة والحذف. إذا واجهت مشاكل تقنية أثناء التسجيل، تواصل مع الدعم الفني فوراً. للأسئلة حول توفر المقررات أو المتطلبات السابقة، استشر مرشدك الأكاديمي أو القسم المقدم للمقرر.",
+          "إذا فاتك الموعد، تحقق هل توجد فترة تسجيل متأخر لبرنامجك ثم تواصل مع الإرشاد/التسجيل لمعرفة الخيارات. التسجيل المتأخر عادةً يتطلب: (1) موافقة المرشد، (2) دفع رسوم تسجيل متأخر (عادةً 50-100 دولار)، و(3) توفر مقاعد في المقررات المطلوبة. التسجيل المتأخر عادةً متاح فقط خلال الأسبوع الأول من المحاضرات. بعد ذلك قد تحتاج الانتظار حتى الفصل القادم أو التقدم بطلب إذن خاص عبر قسمك."
+        ]
+      }
+    },
+    {
+      "tag": "course_registration_add_drop",
+      "category": "course_registration",
+      "patterns": {
+        "en": [
+          "how do i add a course",
+          "how can i drop a class",
+          "add drop period",
+          "can i change my schedule",
+          "swap sections",
+          "i want to remove a course",
+          "how to enroll in a course",
+          "i need to add another class",
+          "how do i withdraw from a course",
+          "where do i add or drop classes",
+          "can i drop after the deadline",
+          "how to change section time",
+          "add a class",
+          "drop a class",
+          "how to swap my section",
+          "i added the wrong class",
+          "i need to change my timetable",
+          "add/drop window",
+          "withdrawal vs drop",
+          "what happens if i drop a course",
+          "can i drop without a W"
+        ],
+        "ar": [
+          "كيف أضيف مادة",
+          "كيف أحذف مادة",
+          "فترة الإضافة والحذف",
+          "أقدر أغير جدولي",
+          "تبديل الشعبة",
+          "أبغى أشيل مادة",
+          "طريقة تسجيل مادة",
+          "أحتاج أضيف مادة ثانية",
+          "كيف أسحب من مادة",
+          "وين أضيف أو أحذف مواد",
+          "هل أقدر أحذف بعد الموعد",
+          "كيف أغير شعبة المادة",
+          "إضافة مادة",
+          "حذف مادة",
+          "أغير جدولي",
+          "سجلت شعبة غلط",
+          "أبغى أبدل شعبة",
+          "هل الحذف يسجل W",
+          "وش الفرق بين حذف وسحب",
+          "أقدر أحذف بدون سحب"
+        ]
+      },
+      "responses": {
+        "en": [
+          "Use the student portal to add/drop courses during the add/drop period. If the period is closed, you may need advisor/department approval.",
+          "You can change your schedule in the portal under Registration. If you share the course code, I can suggest next steps (swap section, waitlist, permission).",
+          "Dropping after the add/drop deadline may create a withdrawal record. Check your program policy and calendar deadlines.",
+          "Quick steps: Portal → Registration → Add/Drop/Swap → select term → submit. Always re-check your schedule and holds after saving.",
+          "If you’re past add/drop: look for “withdraw” rules (W) and deadlines. The registrar/advisor can confirm whether a late change is possible."
+        ],
+        "ar": [
+          "استخدم بوابة الطالب لإضافة/حذف المقررات خلال فترة الإضافة والحذف. إذا انتهت الفترة قد تحتاج موافقة المرشد/القسم.",
+          "يمكنك تعديل الجدول من بوابة الطالب ضمن التسجيل. إذا ذكرت رمز المقرر أستطيع اقتراح خطوات مناسبة (تبديل شعبة، قائمة انتظار، تصريح).",
+          "الحذف بعد نهاية الفترة قد يُسجَّل كسحب. راجع سياسة برنامجك والمواعيد في التقويم الأكاديمي.",
+          "خطوات سريعة: بوابة الطالب → التسجيل → إضافة/حذف/تبديل → اختر الفصل → ثم (حفظ/إرسال). بعد ذلك تأكد من الجدول ووجود أي حظر.",
+          "إذا انتهت فترة الإضافة/الحذف: راجع سياسة السحب (W) والموعد النهائي، وقد تحتاج موافقة الإرشاد/التسجيل على أي تعديل متأخر."
+        ]
+      }
+    },
+    {
+      "tag": "course_registration_prerequisite",
+      "category": "course_registration",
+      "patterns": {
+        "en": [
+          "it says prerequisite not met",
+          "i can't register because of prerequisites",
+          "how do i override a prerequisite",
+          "prerequisite waiver",
+          "permission number for prereq",
+          "need instructor permission",
+          "registration error prerequisite",
+          "who can approve a prerequisite override",
+          "i completed the prereq but system won't let me register",
+          "how to fix prerequisite issue",
+          "missing prerequisite error",
+          "override code for prerequisite"
+        ],
+        "ar": [
+          "يقول المتطلب السابق غير مستوفى",
+          "ما أقدر أسجل بسبب المتطلبات",
+          "كيف أعمل تجاوز للمتطلب",
+          "إعفاء من المتطلب السابق",
+          "رقم تصريح للمتطلب",
+          "أحتاج موافقة المدرس",
+          "خطأ تسجيل متطلبات",
+          "من يوافق على تجاوز المتطلب",
+          "أنهيت المتطلب لكن النظام ما يسمح",
+          "كيف أحل مشكلة المتطلب",
+          "رسالة خطأ المتطلب السابق",
+          "كيف آخذ تصريح متطلب"
+        ]
+      },
+      "responses": {
+        "en": [
+          "If you completed the prerequisite, ensure the grade is posted. Otherwise you may need a prerequisite override from the department/instructor.",
+          "Overrides are typically handled by the offering department. Contact the instructor/department with your student ID and evidence of prerequisite completion.",
+          "Some courses require an electronic permission/override in the portal. If you share the course code, I can suggest what to request."
+        ],
+        "ar": [
+          "إذا أنهيت المتطلب السابق فتأكد أن الدرجة مُسجَّلة في النظام. إذا لم تُسجَّل بعد قد تحتاج انتظار أو طلب تجاوز من القسم/المدرس.",
+          "تجاوز المتطلبات عادة يتم عبر القسم المُقدّم للمقرر. تواصل مع المدرس/القسم وأرسل رقمك الجامعي وإثبات إكمال المتطلب.",
+          "بعض المقررات تتطلب تصريح إلكتروني في بوابة الطالب. إذا أعطيتني رمز المقرر أساعدك ماذا تطلب من القسم."
+        ]
+      }
+    },
+    {
+      "tag": "course_registration_waitlist",
+      "category": "course_registration",
+      "patterns": {
+        "en": [
+          "the class is full",
+          "course is full what do i do",
+          "how does the waitlist work",
+          "can i join the waitlist",
+          "waitlisted for a course",
+          "when will i get off the waitlist",
+          "will more seats open",
+          "how to register when seats are full",
+          "what if i am number 5 on the waitlist",
+          "does waitlist guarantee enrollment",
+          "how to add a full class",
+          "waitlist position"
+        ],
+        "ar": [
+          "الشعبة ممتلئة",
+          "المقرر فل كيف أسجل",
+          "كيف تعمل قائمة الانتظار",
+          "أقدر أدخل قائمة الانتظار",
+          "أنا على قائمة الانتظار",
+          "متى أطلع من قائمة الانتظار",
+          "هل يفتحون مقاعد زيادة",
+          "كيف أسجل إذا المقاعد ممتلئة",
+          "أنا رقم 5 في قائمة الانتظار",
+          "هل قائمة الانتظار تضمن التسجيل",
+          "كيف أسجل مقرر ممتلئ",
+          "ترتيبي في قائمة الانتظار"
+        ]
+      },
+      "responses": {
+        "en": [
+          "If the course has a waitlist, join it via the portal. Waitlists don’t guarantee enrollment, but seats may open as students drop.",
+          "Check for other sections or ask the department if they expect to open seats. You can also email the instructor about capacity.",
+          "If you receive a waitlist offer, accept it before the portal deadline or it may pass to the next student."
+        ],
+        "ar": [
+          "إذا كان للمقرر قائمة انتظار، انضم لها عبر بوابة الطالب. القائمة لا تضمن التسجيل لكن قد تتوفر مقاعد عند حذف طلاب آخرين.",
+          "تحقق من وجود شعب أخرى أو اسأل القسم هل سيفتحون مقاعد إضافية. ويمكنك مراسلة المدرس للاستفسار عن السعة.",
+          "إذا وصلتك فرصة تسجيل من قائمة الانتظار، يجب قبولها قبل انتهاء المهلة في البوابة وإلا ستنتقل للطالب التالي."
+        ]
+      }
+    },
+    {
+      "tag": "registration_hold",
+      "category": "course_registration",
+      "patterns": {
+        "en": [
+          "i have a hold on my account",
+          "registration hold",
+          "why can't i register it says hold",
+          "financial hold",
+          "advising hold",
+          "how to remove a registration hold",
+          "i cannot enroll because of a hold",
+          "portal says i am blocked",
+          "what is a hold",
+          "how do i clear my hold",
+          "immunization hold",
+          "library fine hold",
+          "hold prevents registration",
+          "it says i have a hold",
+          "account hold blocking enrollment",
+          "how to clear financial hold",
+          "how to remove advising hold"
+        ],
+        "ar": [
+          "عندي حظر على الحساب",
+          "حظر التسجيل",
+          "ليش ما أقدر أسجل مكتوب حظر",
+          "حظر مالي",
+          "حظر الإرشاد الأكاديمي",
+          "كيف أشيل حظر التسجيل",
+          "ما أقدر أسجل بسبب حظر",
+          "النظام يمنعني من التسجيل",
+          "ما معنى الحظر",
+          "كيف أفك الحظر",
+          "حظر التطعيم",
+          "حظر غرامات المكتبة",
+          "الحظر يمنع التسجيل",
+          "مكتوب عندي Hold",
+          "كيف أفك الحظر المالي",
+          "كيف أشيل حظر الإرشاد"
+        ]
+      },
+      "responses": {
+        "en": [
+          "A registration hold blocks enrollment until it’s cleared (e.g., advising, fees, missing documents). Check the portal hold details to see the owner office and required action.",
+          "To remove a hold, follow the instructions shown in your student portal and contact the listed office (registrar/advising/finance/health).",
+          "If you tell me the hold type shown in the portal, I can suggest the most likely next step.",
+          "Tip: the portal usually lists both the hold \u201cReason\u201d and the \u201cContact/Office\u201d. Start there before emailing multiple departments."
+        ],
+        "ar": [
+          "حظر التسجيل يمنعك من تسجيل المقررات حتى يتم رفعه (مثل الإرشاد، الرسوم، مستندات ناقصة). راجع تفاصيل الحظر في بوابة الطالب لمعرفة الجهة والإجراء المطلوب.",
+          "لرفع الحظر اتبع التعليمات في بوابة الطالب وتواصل مع الجهة المذكورة (التسجيل/الإرشاد/المالية/الصحة).",
+          "إذا أخبرتني بنوع الحظر الظاهر في البوابة أساعدك بأقرب خطوة مناسبة.",
+          "معلومة: بوابة الطالب عادة تعرض (سبب الحظر) و(الجهة المسؤولة). ابدأ بها قبل مراسلة عدة جهات."
+        ]
+      }
+    },
+    {
+      "tag": "exam_schedule",
+      "category": "exam_schedules",
+      "patterns": {
+        "en": [
+          "when is my exam",
+          "exam schedule",
+          "final exam timetable",
+          "midterm schedule",
+          "what time is the final for calculus",
+          "where can i find the exam timetable",
+          "exam date for my course",
+          "when are finals",
+          "where is my exam room",
+          "how do i check my exams",
+          "finals schedule for this semester",
+          "exam location for my class",
+          "where do i find my final exam",
+          "where is my final",
+          "final exam room",
+          "exam hall",
+          "my exam time",
+          "what day is my exam",
+          "where do i see my midterm schedule"
+        ],
+        "ar": [
+          "متى امتحاني",
+          "جدول الامتحانات",
+          "جدول النهائي",
+          "جدول الميدترم",
+          "كم وقت النهائي لمادة الرياضيات",
+          "وين ألقى جدول الامتحانات",
+          "تاريخ امتحان مادتي",
+          "متى الاختبارات النهائية",
+          "وين قاعة الامتحان",
+          "كيف أشوف امتحاناتي",
+          "جدول الاختبارات هذا الفصل",
+          "مكان امتحان المقرر",
+          "وين ألقى جدول الامتحانات؟",
+          "متى النهائي",
+          "وين النهائي حق مادتي",
+          "قاعة النهائي",
+          "وقت الاختبار",
+          "توقيت الامتحان",
+          "مكان الاختبار"
+        ]
+      },
+      "responses": {
+        "en": [
+          "Exam schedules are posted on the official timetable page and/or the student portal. Check the course code + section for date/time/location.",
+          "You can usually find exam date and room in the portal under Exams/Timetable. Share the course code and I’ll tell you what to verify.",
+          "Final exam timetables can change — always verify the latest official version.",
+          "Checklist: (1) select the correct term, (2) confirm course code + section, (3) note date/time/room, (4) check for updates close to exam week.",
+          "If the room/time is missing, it may not be published yet. Re-check later and contact the department if it stays blank near exam week."
+        ],
+        "ar": [
+          "جداول الامتحانات تُنشر في صفحة الجدول الرسمية و/أو بوابة الطالب. تحقق من رمز المقرر والشعبة لتأكيد التاريخ والوقت والمكان.",
+          "عادة ستجد تاريخ ومكان الامتحان في بوابة الطالب ضمن (الاختبارات/الجدول). اذكر رمز المقرر لأخبرك ماذا تراجع.",
+          "جداول النهائي قد تتغير — تأكد دائماً من آخر نسخة رسمية.",
+          "قائمة تحقق: (1) اختر الفصل الصحيح، (2) تأكد من رمز المقرر والشعبة، (3) سجّل التاريخ/الوقت/القاعة، (4) راجع التحديثات قبل أسبوع الاختبارات.",
+          "إذا لم يظهر المكان/الوقت فقد لا يكون مُعلن بعد. أعد التحقق لاحقاً وتواصل مع القسم إذا استمرت المشكلة قرب الاختبارات."
+        ]
+      }
+    },
+    {
+      "tag": "exam_conflict",
+      "category": "exam_schedules",
+      "patterns": {
+        "en": [
+          "i have two exams at the same time",
+          "exam conflict",
+          "my finals overlap",
+          "two exams same day same time",
+          "what if i have a scheduling conflict",
+          "my midterm conflicts with another class",
+          "how to resolve exam clash",
+          "i have an exam clash",
+          "who do i contact for exam conflict",
+          "can i reschedule my exam",
+          "two finals on the same time slot",
+          "exam overlap help"
+        ],
+        "ar": [
+          "عندي اختبارين بنفس الوقت",
+          "تعارض امتحانات",
+          "النهائيين متداخلين",
+          "اختبارين نفس اليوم ونفس الوقت",
+          "ماذا أفعل إذا عندي تعارض",
+          "الميدترم متعارض مع مادة ثانية",
+          "كيف أحل تعارض الاختبارات",
+          "عندي تعارض في الامتحان",
+          "من أتواصل معه لتعارض الامتحانات",
+          "أقدر أغير موعد الامتحان",
+          "اختبارين بنفس الفترة",
+          "تعارض الجدول"
+        ]
+      },
+      "responses": {
+        "en": [
+          "If you have an exam conflict, contact the exams office/registrar ASAP with both course codes and your student ID.",
+          "Many universities have a formal conflict process and deadline. Check the exam timetable page and submit the conflict request form if available.",
+          "Final exams are usually scheduled centrally — don’t assume individual instructors can reschedule them."
+        ],
+        "ar": [
+          "إذا عندك تعارض امتحانات تواصل فوراً مع شؤون الاختبارات/التسجيل مع ذكر رمزي المقررين ورقمك الجامعي.",
+          "غالباً يوجد إجراء رسمي وموعد نهائي لتقديم طلب التعارض. راجع صفحة جدول الامتحانات وقدّم النموذج إن وُجد.",
+          "الامتحانات النهائية عادة تُدار مركزياً — لا تفترض أن المدرس يستطيع تغيير موعد النهائي بشكل فردي."
+        ]
+      }
+    },
+    {
+      "tag": "exam_makeup",
+      "category": "exam_schedules",
+      "patterns": {
+        "en": [
+          "i missed my exam",
+          "missed final exam",
+          "missed midterm",
+          "how do i apply for a makeup exam",
+          "makeup exam policy",
+          "deferred exam",
+          "sick on exam day",
+          "medical excuse for exam",
+          "can i take the exam later",
+          "what happens if i don't attend the exam",
+          "i overslept and missed the final",
+          "can i defer my exam",
+          "make up exam",
+          "exam deferral request",
+          "how to request deferred final",
+          "i was absent for exam",
+          "emergency missed exam"
+        ],
+        "ar": [
+          "فاتني الامتحان",
+          "غبت عن النهائي",
+          "غبت عن الميدترم",
+          "كيف أقدم على اختبار بديل",
+          "سياسة الاختبار البديل",
+          "اختبار مؤجل",
+          "كنت مريض يوم الامتحان",
+          "عذر طبي للامتحان",
+          "أقدر أختبر لاحقاً",
+          "ماذا يحدث إذا ما حضرت الامتحان",
+          "نمت وفاتني النهائي",
+          "كيف أؤجل الامتحان",
+          "اختبار تعويضي",
+          "طلب تأجيل اختبار",
+          "غيبت عن الاختبار",
+          "ظرف طارئ وفاتني الاختبار"
+        ]
+      },
+      "responses": {
+        "en": [
+          "Make-up/deferred exams typically require documented extenuating circumstances and must be requested quickly. Check your program’s deferral policy and submit the required form.",
+          "If you missed an exam due to illness, collect documentation and contact the exams office/faculty administration immediately.",
+          "Policies vary by program. Tell me your faculty/program and I can outline the typical steps and what evidence is needed.",
+          "Good request message includes: course code + section, exam date/time, reason, and supporting documents (medical note, incident report, etc.)."
+        ],
+        "ar": [
+          "الاختبار البديل/التأجيل عادة يتطلب ظروفاً موثقة ويجب تقديم الطلب بسرعة. راجع سياسة التأجيل في برنامجك وقدّم النموذج المطلوب.",
+          "إذا غبت بسبب مرض، جهّز الإثباتات وتواصل فوراً مع شؤون الاختبارات/إدارة الكلية.",
+          "السياسات تختلف حسب البرنامج. إذا ذكرت كليتك/برنامجك أشرح لك الخطوات الشائعة وما الذي يجب إرفاقه.",
+          "في الطلب اكتب عادة: رمز المقرر والشعبة، تاريخ/وقت الاختبار، سبب الغياب، وأي إثباتات (تقرير طبي/بلاغ/إلخ)."
+        ]
+      }
+    },
+    {
+      "tag": "exam_results",
+      "category": "exam_schedules",
+      "patterns": {
+        "en": [
+          "when are exam results released",
+          "final grades release date",
+          "when will grades be posted",
+          "where can i see my grades",
+          "exam marks",
+          "results for my final",
+          "grade posting timeline",
+          "when do we get our marks",
+          "where is the grade report",
+          "how to check results",
+          "i can't see my grade in the portal",
+          "my grade is missing",
+          "grades not posted yet",
+          "my final grade is not showing",
+          "grade not released",
+          "when will the grade appear"
+        ],
+        "ar": [
+          "متى تنزل النتائج",
+          "متى تطلع الدرجات النهائية",
+          "متى تتحدث الدرجات",
+          "وين أشوف درجاتي",
+          "نتائج الامتحان",
+          "درجة النهائي",
+          "موعد إعلان النتائج",
+          "متى نستلم الدرجات",
+          "كشف الدرجات",
+          "كيف أشيك النتائج",
+          "ما تظهر درجتي في البوابة",
+          "درجتي مفقودة",
+          "الدرجة ما نزلت",
+          "ما تظهر الدرجة النهائية",
+          "متى تنزل درجة النهائي"
+        ]
+      },
+      "responses": {
+        "en": [
+          "Grades are usually posted in the student portal after grading and verification. Check the portal gradebook and the academic calendar for official release windows.",
+          "If a grade is missing, confirm you are viewing the correct term and section. If it still isn’t there after the posted deadline, contact the course instructor or department.",
+          "Some programs release grades in batches. The portal is the source of truth once grades are finalized.",
+          "If you think there is an error, ask for clarification through the official process (course instructor → department → registrar), and keep screenshots/dates."
+        ],
+        "ar": [
+          "الدرجات عادة تُنشر في بوابة الطالب بعد التصحيح والمراجعة. راجع سجل الدرجات في البوابة والتقويم الأكاديمي لمعرفة فترة الإعلان.",
+          "إذا كانت درجة مفقودة تأكد أنك اخترت الفصل والشعبة الصحيحة. وإذا استمرت المشكلة بعد الموعد المعلن تواصل مع مدرس المقرر أو القسم.",
+          "بعض البرامج تنشر الدرجات على دفعات. بوابة الطالب هي المصدر الرسمي بعد اعتماد الدرجات.",
+          "إذا كنت تعتقد بوجود خطأ، اتبع الإجراء الرسمي للاستفسار (مدرس المقرر → القسم → التسجيل) واحتفظ بلقطات شاشة وتواريخ."
+        ]
+      }
+    },
+    {
+      "tag": "grading_policy",
+      "category": "academic_policies_grading",
+      "patterns": {
+        "en": [
+          "grading policy",
+          "how is my grade calculated",
+          "grading scale",
+          "what is the passing grade",
+          "minimum grade to pass",
+          "what is the grade breakdown",
+          "how are final grades determined",
+          "is attendance part of the grade",
+          "how much is the final worth",
+          "rubric for grading",
+          "grading criteria",
+          "how many points for assignments"
+        ],
+        "ar": [
+          "سياسة الدرجات",
+          "كيف تنحسب درجتي",
+          "سلم الدرجات",
+          "كم درجة النجاح",
+          "الحد الأدنى للنجاح",
+          "توزيع الدرجات",
+          "كيف تُحدد الدرجة النهائية",
+          "هل الحضور عليه درجات",
+          "كم نسبة النهائي",
+          "معايير التصحيح",
+          "سلم التقديرات",
+          "كم درجات الواجبات"
+        ]
+      },
+      "responses": {
+        "en": [
+          "Grade weighting is defined in the course syllabus (assignments, quizzes, midterm, final). Check the syllabus/course site for the exact breakdown.",
+          "Passing grade and scale depend on the program and course. Start with the syllabus and the official academic regulations page.",
+          "If you share the course code, I can suggest what to look for (gradebook, rubric, syllabus section)."
+        ],
+        "ar": [
+          "توزيع الدرجات يكون في توصيف/خطة المقرر (واجبات، اختبارات قصيرة، ميدترم، نهائي). راجع خطة المقرر أو منصة المقرر للتفاصيل.",
+          "درجة النجاح والسلم يختلفان حسب البرنامج والمقرر. ابدأ بخطة المقرر ثم اللوائح الأكاديمية الرسمية.",
+          "إذا ذكرت رمز المقرر أساعدك أين تبحث (سجل الدرجات، الروبرك، قسم التقييم في الخطة)."
+        ]
+      }
+    },
+    {
+      "tag": "gpa_calculation",
+      "category": "academic_policies_grading",
+      "patterns": {
+        "en": [
+          "how does gpa work",
+          "how to calculate gpa",
+          "gpa calculation",
+          "calculate my cumulative gpa",
+          "what is grade points",
+          "how to compute semester gpa",
+          "gpa formula",
+          "how do credits affect gpa",
+          "is gpa weighted by credits",
+          "gpa calculator",
+          "how to raise my gpa",
+          "my gpa dropped why",
+          "what is my gpa",
+          "how to calculate GPA",
+          "GPA",
+          "semester gpa vs cumulative gpa",
+          "how do i improve my cumulative gpa",
+          "does repeating a course change gpa",
+          "how are grade points calculated"
+        ],
+        "ar": [
+          "كيف ينحسب المعدل",
+          "طريقة حساب المعدل",
+          "حساب المعدل التراكمي",
+          "كيف أحسب المعدل الفصلي",
+          "معادلة المعدل",
+          "نقاط التقدير",
+          "كيف تؤثر الساعات على المعدل",
+          "هل المعدل موزون بالساعات",
+          "حاسبة المعدل",
+          "كيف أرفع معدلي",
+          "انخفض معدلي ليش",
+          "شرح حساب gpa",
+          "ما هو المعدل",
+          "معدلي التراكمي",
+          "معدلي الفصلي",
+          "GPA",
+          "هل إعادة المادة ترفع المعدل",
+          "كيف أحسن معدلي التراكمي"
+        ]
+      },
+      "responses": {
+        "en": [
+          "GPA is typically a credit-weighted average of grade points: sum(grade_points × credits) / sum(credits). Use the university’s GPA calculator if available.",
+          "Check the grade-to-points table for your program (e.g., A=4.0, B=3.0). Multiply by course credits, sum, then divide by total credits.",
+          "If you tell me your grades + credits, I can show the calculation steps.",
+          "Quick example: if you have (A, 3 credits) and (B, 4 credits) → (4×3 + 3×4) / (3+4) = 24/7 = 3.43.",
+          "If your GPA dropped, check for (1) failed/low-grade courses, (2) repeated courses policy, and (3) whether the term you’re viewing is correct."
+        ],
+        "ar": [
+          "المعدل غالباً يُحسب كمعدل موزون بالساعات: مجموع(نقاط التقدير × الساعات) ÷ مجموع الساعات. استخدم حاسبة المعدل الرسمية إن وُجدت.",
+          "راجع جدول تحويل التقديرات إلى نقاط في لوائح برنامجك (مثلاً A=4.0). اضرب نقاط كل مقرر في ساعاته ثم اقسم على مجموع الساعات.",
+          "إذا أعطيتني الدرجات والساعات أقدر أوضح لك خطوات الحساب.",
+          "مثال سريع: (A بساعات 3) و(B بساعات 4) → (4×3 + 3×4) ÷ (3+4) = 24÷7 = 3.43.",
+          "إذا انخفض المعدل راجع: (1) المواد منخفضة الدرجة/الرسوب، (2) سياسة إعادة المقرر، (3) هل تعرض الفصل الصحيح في البوابة."
+        ]
+      }
+    },
+    {
+      "tag": "academic_probation",
+      "category": "academic_policies_grading",
+      "patterns": {
+        "en": [
+          "academic probation",
+          "am i on probation",
+          "what happens if my gpa is low",
+          "academic standing",
+          "warning letter for grades",
+          "how to get off probation",
+          "probation policy",
+          "what is academic dismissal",
+          "minimum gpa requirement",
+          "i failed multiple courses what now",
+          "at risk of dismissal",
+          "my standing is warning"
+        ],
+        "ar": [
+          "إنذار أكاديمي",
+          "هل أنا تحت الإنذار",
+          "ماذا يحدث إذا كان معدلي منخفض",
+          "الحالة الأكاديمية",
+          "رسالة إنذار بسبب الدرجات",
+          "كيف أطلع من الإنذار",
+          "سياسة الإنذار",
+          "ما هو الفصل الأكاديمي",
+          "الحد الأدنى للمعدل",
+          "رسبت في أكثر من مادة ماذا أفعل",
+          "خطر الفصل",
+          "مكتوب حالتي إنذار"
+        ]
+      },
+      "responses": {
+        "en": [
+          "Academic standing is usually evaluated at the end of a term based on GPA and credits. Check your portal for your standing and review your program’s probation policy.",
+          "If you’re at risk, talk to your academic advisor early. They can help with an academic plan (repeat courses, reduce load, tutoring).",
+          "Probation often comes with conditions (minimum term GPA, credit limits). Confirm details in official regulations for your faculty."
+        ],
+        "ar": [
+          "الحالة الأكاديمية تُقيَّم عادة نهاية الفصل بناءً على المعدل والساعات. راجع بوابة الطالب لمعرفة حالتك واطّلع على سياسة الإنذار في برنامجك.",
+          "إذا كنت معرضاً للإنذار/الفصل، تواصل مبكراً مع المرشد الأكاديمي لوضع خطة (إعادة مقررات، تقليل عبء، دعم تعليمي).",
+          "الإنذار غالباً له شروط (حد أدنى لمعدل فصلي، حد ساعات). تأكد من التفاصيل في اللوائح الرسمية لكليتك."
+        ]
+      }
+    },
+    {
+      "tag": "academic_integrity",
+      "category": "academic_policies_grading",
+      "patterns": {
+        "en": [
+          "plagiarism policy",
+          "academic integrity",
+          "cheating policy",
+          "what counts as plagiarism",
+          "can i reuse my old assignment",
+          "is using ai allowed",
+          "citation rules",
+          "what happens if i get caught cheating",
+          "turnitin similarity",
+          "collaboration policy",
+          "is paraphrasing plagiarism",
+          "can i share answers with a friend"
+        ],
+        "ar": [
+          "سياسة النزاهة الأكاديمية",
+          "الانتحال",
+          "الغش",
+          "ما هو الانتحال",
+          "هل أقدر أعيد استخدام واجبي القديم",
+          "هل استخدام الذكاء الاصطناعي مسموح",
+          "قواعد الاقتباس",
+          "ماذا يحدث إذا انمسكت غش",
+          "نسبة التشابه turnitin",
+          "سياسة التعاون",
+          "هل إعادة الصياغة تعتبر انتحال",
+          "هل أقدر أشارك الحل مع صديقي"
+        ]
+      },
+      "responses": {
+        "en": [
+          "Academic integrity policies cover plagiarism, unauthorized collaboration, and misconduct. Check the official policy page and your course syllabus rules.",
+          "When in doubt: cite sources, follow collaboration rules, and ask your instructor before submitting anything questionable.",
+          "Penalties can be serious. If you tell me your faculty, I can suggest which policy sections to review."
+        ],
+        "ar": [
+          "سياسات النزاهة الأكاديمية تشمل الانتحال والتعاون غير المصرح به والمخالفات. راجع السياسة الرسمية وخطة المقرر.",
+          "عند الشك: وثّق المصادر، التزم بقواعد التعاون، واسأل المدرس قبل تسليم أي عمل قد يكون مخالفاً.",
+          "العقوبات قد تكون شديدة. إذا ذكرت كليتك أساعدك أي أقسام في اللائحة يجب قراءتها."
+        ]
+      }
+    },
+    {
+      "tag": "retake_repeat_course",
+      "category": "academic_policies_grading",
+      "patterns": {
+        "en": [
+          "can i retake a course",
+          "repeat a course",
+          "i failed a class can i take it again",
+          "how does repeating a course affect gpa",
+          "course repeat policy",
+          "can i improve my grade by retaking",
+          "is there a limit on repeats",
+          "retake course next semester",
+          "do both grades count",
+          "how many times can i repeat a course",
+          "can i repeat a passed course to improve grade",
+          "grade replacement policy"
+        ],
+        "ar": [
+          "أقدر أعيد مادة",
+          "إعادة مقرر",
+          "رسبت في مادة هل أعيدها",
+          "كيف تؤثر الإعادة على المعدل",
+          "سياسة إعادة المقرر",
+          "هل أقدر أحسن درجتي بإعادة المادة",
+          "هل يوجد حد للإعادة",
+          "أعيد المادة الفصل القادم",
+          "هل تحسب الدرجتين",
+          "كم مرة أقدر أعيد مادة",
+          "هل أقدر أعيد مادة ناجح فيها لتحسينها",
+          "سياسة استبدال الدرجة"
+        ]
+      },
+      "responses": {
+        "en": [
+          "Repeat rules vary by program. Check academic regulations for how repeats affect credits and GPA.",
+          "Some programs replace the grade; others keep both grades on the transcript. Verify the official repeat/grade replacement policy.",
+          "If the course is required, retaking is common — confirm repeat limits and whether advisor approval is needed."
+        ],
+        "ar": [
+          "قواعد إعادة المقرر تختلف حسب البرنامج. راجع اللوائح الأكاديمية لمعرفة تأثير الإعادة على الساعات والمعدل.",
+          "بعض البرامج تستبدل الدرجة وبعضها يُبقي الدرجات في السجل. تأكد من سياسة الإعادة/استبدال الدرجة الرسمية.",
+          "إذا كان المقرر متطلباً فإعادته شائعة — تحقق من حد الإعادة وهل تحتاج موافقة المرشد."
+        ]
+      }
+    },
+    {
+      "tag": "library_access",
+      "category": "library_resources",
+      "patterns": {
+        "en": [
+          "how do i access the library",
+          "library login",
+          "how can i access online library resources",
+          "access journals from home",
+          "library database access",
+          "off campus access to papers",
+          "how do i use the digital library",
+          "library account",
+          "can't access an ebook",
+          "how to find articles",
+          "proxy access for library",
+          "vpn for library resources",
+          "remote access to library",
+          "off-campus access",
+          "library proxy",
+          "my library login not working",
+          "can't access database from home",
+          "i can open library site but not pdf",
+          "i get access denied on journals"
+        ],
+        "ar": [
+          "كيف أدخل المكتبة",
+          "تسجيل دخول المكتبة",
+          "كيف أوصل لمصادر المكتبة الإلكترونية",
+          "الوصول للمجلات من البيت",
+          "الوصول لقواعد البيانات",
+          "وصول خارج الجامعة للأبحاث",
+          "كيف أستخدم المكتبة الرقمية",
+          "حساب المكتبة",
+          "ما أقدر أفتح كتاب إلكتروني",
+          "كيف أبحث عن مقالات",
+          "الدخول عبر البروكسي للمكتبة",
+          "هل أحتاج vpn للمكتبة",
+          "وصول خارج الجامعة",
+          "الدخول من البيت للمكتبة",
+          "بروكسي المكتبة",
+          "تسجيل الدخول ما يشتغل",
+          "يطلع لي Access denied في المجلات",
+          "ما يفتح معي PDF من قواعد البيانات"
+        ]
+      },
+      "responses": {
+        "en": [
+          "For online access, sign in via the library portal using your university credentials. Off-campus access often requires VPN or a proxy login.",
+          "If you can’t access an e-book/database, log in through the library website (avoid direct external links). If it still fails, contact library IT support.",
+          "Use the library search tool to find journals/articles. Filters like “Full Text” and “Peer Reviewed” help narrow results.",
+          "If you see “Access denied”, make sure you started from the library portal (SSO/VPN). Direct Google links often fail off-campus.",
+          "Try this order: (1) open library portal, (2) sign in, (3) search again, (4) open the PDF. If it still fails, share the error message with library support."
+        ],
+        "ar": [
+          "للوصول الإلكتروني سجّل دخولك عبر بوابة المكتبة باستخدام حساب الجامعة. الوصول خارج الحرم غالباً يحتاج VPN أو دخول عبر Proxy.",
+          "إذا لم تستطع فتح كتاب/قاعدة بيانات، جرّب الدخول من موقع المكتبة (وليس رابط خارجي مباشر). إن استمرت المشكلة تواصل مع دعم تقنية المكتبة.",
+          "استخدم محرك بحث المكتبة للعثور على المقالات والمجلات، وفعّل فلاتر مثل (نص كامل) و(محكّم) لتضييق النتائج.",
+          "إذا ظهر لك “Access denied”، تأكد أنك دخلت من بوابة المكتبة (SSO/VPN). الروابط المباشرة من جوجل غالباً لا تعمل خارج الجامعة.",
+          "جرّب بالترتيب: (1) افتح بوابة المكتبة، (2) سجّل دخولك، (3) ابحث من جديد، (4) افتح الـ PDF. إذا استمرت المشكلة أرسل رسالة الخطأ لدعم المكتبة."
+        ]
+      }
+    },
+    {
+      "tag": "library_borrowing",
+      "category": "library_resources",
+      "patterns": {
+        "en": [
+          "how many books can i borrow",
+          "library loan period",
+          "when is the due date",
+          "renew a library book",
+          "book renewal",
+          "overdue books",
+          "library fines",
+          "lost library book",
+          "can i place a hold",
+          "how do i reserve a book",
+          "how to renew online",
+          "borrowing limit for students"
+        ],
+        "ar": [
+          "كم كتاب أقدر أستعير",
+          "مدة الاستعارة",
+          "متى تاريخ الإرجاع",
+          "تجديد كتاب من المكتبة",
+          "تجديد الاستعارة",
+          "كتب متأخرة",
+          "غرامات المكتبة",
+          "فقدت كتاب المكتبة",
+          "أقدر أحجز كتاب",
+          "كيف أحجز كتاب",
+          "كيف أجدد أونلاين",
+          "حد الاستعارة للطلاب"
+        ]
+      },
+      "responses": {
+        "en": [
+          "Borrowing limits and loan periods depend on user type (undergrad/grad/staff). Check the library borrowing policy page for exact numbers.",
+          "You can usually renew items through your library account unless another user placed a hold.",
+          "Overdue/lost item policies can include fines or replacement fees. If you tell me the item type, I can suggest where to check the rules."
+        ],
+        "ar": [
+          "حدود الاستعارة ومدة الإعارة تختلف حسب صفة المستخدم (طالب بكالوريوس/دراسات عليا/موظف). راجع صفحة سياسات الاستعارة في موقع المكتبة للأرقام الدقيقة.",
+          "عادة يمكنك تجديد الإعارة من حساب المكتبة ما لم يكن هناك حجز من مستخدم آخر.",
+          "تأخير/فقدان المواد قد يترتب عليه غرامات أو رسوم استبدال. إذا ذكرت نوع المادة أساعدك أين تجد القواعد."
+        ]
+      }
+    },
+    {
+      "tag": "library_hours",
+      "category": "library_resources",
+      "patterns": {
+        "en": [
+          "library hours",
+          "when does the library open",
+          "when does the library close",
+          "is the library open today",
+          "weekend library hours",
+          "holiday hours for library",
+          "opening times",
+          "closing time",
+          "what time is the library open",
+          "library schedule",
+          "is the library open on friday",
+          "exam period library hours"
+        ],
+        "ar": [
+          "دوام المكتبة",
+          "متى تفتح المكتبة",
+          "متى تقفل المكتبة",
+          "هل المكتبة مفتوحة اليوم",
+          "دوام نهاية الأسبوع",
+          "دوام العيد للمكتبة",
+          "مواعيد العمل",
+          "وقت الإغلاق",
+          "متى تفتح المكتبة",
+          "جدول المكتبة",
+          "هل المكتبة مفتوحة الجمعة",
+          "دوام المكتبة وقت الاختبارات"
+        ]
+      },
+      "responses": {
+        "en": [
+          "Library hours vary by branch and time of year. Check the library website for today’s opening hours.",
+          "During exams, libraries often extend hours. Verify the exam-period schedule on library announcements.",
+          "If you tell me which branch, I can help you locate the correct hours page."
+        ],
+        "ar": [
+          "مواعيد المكتبة تختلف حسب الفرع وفترة السنة. راجع موقع المكتبة لمعرفة دوام اليوم.",
+          "خلال فترة الاختبارات غالباً يتم تمديد الدوام. تأكد من إعلان ساعات الاختبارات في موقع المكتبة.",
+          "إذا ذكرت أي فرع تقصد أساعدك بالوصول لصفحة الدوام الصحيحة."
+        ]
+      }
+    },
+    {
+      "tag": "contact_advisor",
+      "category": "general",
+      "patterns": {
+        "en": [
+          "how do i contact my advisor",
+          "academic advisor email",
+          "i need to talk to an advisor",
+          "who is my advisor",
+          "advising appointment",
+          "book an appointment with advisor",
+          "advisor office hours",
+          "how to reach advising",
+          "academic counseling",
+          "need help choosing courses",
+          "i need an advising meeting",
+          "where is advising office",
+          "how to book advising appointment",
+          "advisor booking link",
+          "i need course plan help",
+          "i need to meet my advisor",
+          "computer science",
+          "information technology",
+          "CS advisor",
+          "IT advisor",
+          "computer science advisor",
+          "IT department advisor",
+          "CS department",
+          "IT department",
+          "my program is computer science",
+          "my program is IT",
+          "i study computer science",
+          "i study IT",
+          "information systems",
+          "software engineering advisor"
+        ],
+        "ar": [
+          "كيف أتواصل مع المرشد الأكاديمي",
+          "إيميل المرشد الأكاديمي",
+          "أحتاج أكلم المرشد",
+          "من هو مرشدي",
+          "موعد إرشاد أكاديمي",
+          "حجز موعد مع المرشد",
+          "ساعات مكتب المرشد",
+          "كيف أوصل للإرشاد",
+          "استشارة أكاديمية",
+          "أحتاج مساعدة في اختيار المواد",
+          "أبي موعد مع الإرشاد",
+          "وين مكتب الإرشاد",
+          "كيف أحجز موعد إرشاد",
+          "رابط حجز المرشد",
+          "أحتاج خطة دراسية",
+          "أبي أقابل المرشد"
+        ]
+      },
+      "responses": {
+        "en": [
+          "For Computer Science/IT programs, advisors are listed in your student portal under \"Advising/Support\" or \"Academic Services\". CS/IT advisors are typically located in Room 201, Engineering Building. Office hours: Monday-Thursday 10 AM - 2 PM. Book appointments via the portal or email cs-advising@university.edu. Walk-ins welcome during office hours.",
+          "If you're in Computer Science or Information Technology, your advisor assignment is based on your academic year. First-year students: contact general advising (advising@university.edu). Upperclassmen: check your portal's \"My Advisor\" section for your assigned advisor's direct email and office location. For urgent matters, same-day appointments may be available.",
+          "For CS/IT students: Your advisor helps with course planning, prerequisites, and registration. Before your appointment, prepare: your student ID, current transcript, planned courses for next semester (Spring 2026 registration opens November 15), and any prerequisite questions. Book appointments at least 2 weeks before registration opens for best availability.",
+          "Computer Science and IT department advisors: Main office is in Engineering Building, Room 201. Contact: cs-advising@university.edu or (555) 123-4567. Appointments can be booked online through the student portal → Advising → Book Appointment. Walk-in hours: Mon-Thu 10 AM-2 PM. For program-specific questions, mention your specialization (e.g., Software Engineering, Cybersecurity, Data Science)."
+        ],
+        "ar": [
+          "عادة ستجد المرشد الأكاديمي في بوابة الطالب ضمن (الإرشاد/الدعم) مع بيانات التواصل ورابط الحجز.",
+          "إذا لم تجد مرشدك المخصص، تواصل مع مكتب القسم للحصول على دعم الإرشاد.",
+          "اذكر برنامجك/قسمك وسأقترح لك طريقة التواصل الأكثر شيوعاً.",
+          "قبل موعد الإرشاد جهّز: رقمك الجامعي، خطتك الحالية، والمواد التي تريد إضافتها/حذفها. هذا يسرّع الاستشارة."
+        ]
+      }
+    },
+    {
+      "tag": "tuition_fees_payment",
+      "category": "student_finance",
+      "patterns": {
+        "en": [
+          "tuition fees",
+          "how much is tuition",
+          "how do i pay my fees",
+          "payment methods for tuition",
+          "fees payment deadline",
+          "installment plan",
+          "can i pay in installments",
+          "financial office contact",
+          "how to print fee invoice",
+          "i have a financial hold",
+          "my payment is not reflected",
+          "how do i pay online"
+        ],
+        "ar": [
+          "الرسوم الدراسية",
+          "كم الرسوم",
+          "كيف أدفع الرسوم",
+          "طرق دفع الرسوم",
+          "موعد دفع الرسوم",
+          "تقسيط الرسوم",
+          "أقدر أقسط",
+          "التواصل مع المالية",
+          "كيف أطبع فاتورة الرسوم",
+          "عندي حظر مالي",
+          "دفعت وما انخصمت",
+          "كيف أدفع أونلاين"
+        ]
+      },
+      "responses": {
+        "en": [
+          "Tuition and fees depend on your program and credit load. Check your student portal for the invoice and the official payment deadline.",
+          "To pay, use the payment options shown in your portal (online payment/bank transfer/finance office). If you share what the portal shows, I can guide you to the right screen.",
+          "If a payment isn’t reflected, keep the receipt/reference number and contact the finance office; processing can take some time."
+        ],
+        "ar": [
+          "الرسوم تعتمد على البرنامج وعدد الساعات. راجع بوابة الطالب لمعرفة الفاتورة والموعد النهائي للدفع.",
+          "للدفع استخدم الخيارات الموجودة في بوابة الطالب (دفع إلكتروني/تحويل/مكتب المالية). إذا أخبرتني بما يظهر في البوابة أوجهك للصفحة المناسبة.",
+          "إذا لم تظهر الدفعة، احتفظ بالإيصال/رقم العملية وتواصل مع المالية لأن التحديث قد يحتاج وقتاً."
+        ]
+      }
+    },
+    {
+      "tag": "scholarship_financial_aid",
+      "category": "student_finance",
+      "patterns": {
+        "en": [
+          "scholarship",
+          "financial aid",
+          "how to apply for scholarship",
+          "scholarship requirements",
+          "merit scholarship",
+          "need-based aid",
+          "how do i renew my scholarship",
+          "scholarship GPA requirement",
+          "discount for top students",
+          "tuition discount",
+          "financial support office",
+          "when are scholarship results"
+        ],
+        "ar": [
+          "منحة",
+          "مساعدة مالية",
+          "كيف أقدم على منحة",
+          "شروط المنحة",
+          "منحة تفوق",
+          "مساعدة حسب الحاجة",
+          "كيف أجدد المنحة",
+          "معدل المنحة",
+          "خصم للمتفوقين",
+          "خصم الرسوم",
+          "مكتب الدعم المالي",
+          "متى نتائج المنح"
+        ]
+      },
+      "responses": {
+        "en": [
+          "Scholarships/aid have specific eligibility rules (GPA, credit load, documents). Check the university’s official scholarships page and your portal announcements.",
+          "If you’re renewing a scholarship, confirm the minimum GPA/credits requirement and any deadlines each term.",
+          "Tell me whether you mean merit-based or need-based support, and I’ll suggest what documents and steps are typically required."
+        ],
+        "ar": [
+          "المنح/الدعم المالي لها شروط محددة (معدل، ساعات، وثائق). راجع صفحة المنح الرسمية وإعلانات بوابة الطالب.",
+          "لتجديد المنحة تأكد من الحد الأدنى للمعدل/الساعات والموعد النهائي كل فصل.",
+          "اذكر هل تقصد منحة تفوق أم دعم حسب الحاجة وسأقترح لك الخطوات والوثائق المطلوبة غالباً."
+        ]
+      }
+    },
+    {
+      "tag": "transcript_request",
+      "category": "student_records",
+      "patterns": {
+        "en": [
+          "how to request transcript",
+          "official transcript",
+          "unofficial transcript",
+          "print my transcript",
+          "grade report pdf",
+          "academic record",
+          "where to get transcript",
+          "transcript in english",
+          "transcript in arabic",
+          "how long does transcript take",
+          "i need a stamped transcript",
+          "transcript for internship"
+        ],
+        "ar": [
+          "كيف أطلع كشف درجات",
+          "كشف درجات رسمي",
+          "كشف درجات غير رسمي",
+          "أطبع كشف الدرجات",
+          "تقرير الدرجات pdf",
+          "السجل الأكاديمي",
+          "وين أجيب كشف الدرجات",
+          "كشف درجات بالانجليزي",
+          "كشف درجات بالعربي",
+          "كم يأخذ استخراج كشف الدرجات",
+          "أحتاج كشف مختوم",
+          "كشف درجات للتدريب"
+        ]
+      },
+      "responses": {
+        "en": [
+          "Transcripts are usually available via the student portal (unofficial) and through the registrar/records office for stamped official copies.",
+          "If you need an official transcript, check whether you must submit a request form and pay a fee. Processing time varies.",
+          "If you tell me whether you need official/unofficial and language (EN/AR), I can suggest the typical request path."
+        ],
+        "ar": [
+          "كشف الدرجات غالباً متاح في بوابة الطالب (غير رسمي)، أما الرسمي المختوم فيكون عبر دائرة التسجيل/السجلات.",
+          "للكشف الرسمي قد تحتاج تقديم طلب ودفع رسوم، ومدة التجهيز تختلف.",
+          "إذا أخبرتني هل تريد رسمي/غير رسمي وبأي لغة (عربي/إنجليزي) أساعدك بالمسار المعتاد للطلب."
+        ]
+      }
+    },
+    {
+      "tag": "graduation_requirements",
+      "category": "academic_progress",
+      "patterns": {
+        "en": [
+          "graduation requirements",
+          "how many credits to graduate",
+          "graduation checklist",
+          "can i graduate this semester",
+          "what courses are required to graduate",
+          "degree audit",
+          "graduation application",
+          "when to apply for graduation",
+          "capstone requirement",
+          "internship requirement",
+          "my study plan",
+          "expected graduation date"
+        ],
+        "ar": [
+          "متطلبات التخرج",
+          "كم ساعة للتخرج",
+          "قائمة التخرج",
+          "أقدر أتخرج هذا الفصل",
+          "وش المواد المطلوبة للتخرج",
+          "تدقيق التخرج",
+          "طلب التخرج",
+          "متى أقدم على التخرج",
+          "متطلب مشروع التخرج",
+          "متطلب التدريب",
+          "الخطة الدراسية",
+          "موعد تخرجي المتوقع"
+        ]
+      },
+      "responses": {
+        "en": [
+          "Graduation requirements depend on your program (total credits, required courses, GPA, and any capstone/internship). Use your degree audit/study plan in the portal as the source of truth.",
+          "If you plan to graduate this term, confirm: remaining credits, required courses completed, minimum GPA, and submit the graduation application by the deadline.",
+          "Tell me your program and level (undergrad/grad) and I can outline the typical graduation checklist."
+        ],
+        "ar": [
+          "متطلبات التخرج تعتمد على البرنامج (إجمالي الساعات، المواد الإلزامية، المعدل، ومتطلبات مثل مشروع/تدريب). تدقيق التخرج/الخطة في بوابة الطالب هو المرجع الأساسي.",
+          "إذا تنوي التخرج هذا الفصل تأكد من: الساعات المتبقية، إكمال المواد المطلوبة، الحد الأدنى للمعدل، وتقديم طلب التخرج قبل الموعد النهائي.",
+          "اذكر برنامجك والمستوى (بكالوريوس/دراسات) وسأعطيك قائمة تحقق شائعة للتخرج."
+        ]
+      }
+    },
+    {
+      "tag": "class_attendance_policy",
+      "category": "academic_policies_grading",
+      "patterns": {
+        "en": [
+          "attendance policy",
+          "how many absences allowed",
+          "i missed classes",
+          "absence limit",
+          "can i be dropped for absence",
+          "attendance affects grade",
+          "late attendance",
+          "excused absence",
+          "medical absence",
+          "attendance percentage",
+          "what happens if i exceed absence limit",
+          "attendance rules"
+        ],
+        "ar": [
+          "سياسة الحضور",
+          "كم غياب مسموح",
+          "غبت عن محاضرات",
+          "حد الغياب",
+          "هل ينحذف اسمي بسبب الغياب",
+          "الحضور يؤثر على الدرجة",
+          "التأخر عن المحاضرة",
+          "غياب بعذر",
+          "عذر طبي للغياب",
+          "نسبة الحضور",
+          "وش يصير إذا تجاوزت الغياب",
+          "قواعد الحضور"
+        ]
+      },
+      "responses": {
+        "en": [
+          "Attendance rules vary by course and university policy. Start with your course syllabus and the official academic regulations for absence limits and penalties.",
+          "If you have an excused absence (medical/emergency), keep documentation and contact the instructor/department as soon as possible.",
+          "If you tell me the course type (lab/lecture) and what the syllabus says, I can help interpret the next steps."
+        ],
+        "ar": [
+          "قواعد الحضور تختلف حسب المقرر ولوائح الجامعة. ابدأ بخطة المقرر ثم اللائحة الأكاديمية لمعرفة حد الغياب والعقوبات.",
+          "إذا كان الغياب بعذر (مرض/طارئ) احتفظ بالإثباتات وتواصل مع المدرس/القسم بأسرع وقت.",
+          "إذا أخبرتني بنوع المقرر (مختبر/محاضرة) وما ورد في الخطة أساعدك بفهم الخطوات المناسبة."
+        ]
+      }
+    },
+    {
+      "tag": "campus_it_support",
+      "category": "campus_services",
+      "patterns": {
+        "en": [
+          "portal login not working",
+          "i forgot my password",
+          "reset my password",
+          "student email setup",
+          "wifi not working",
+          "campus wifi",
+          "LMS login",
+          "blackboard login",
+          "moodle login",
+          "my account is locked",
+          "two factor authentication",
+          "IT support contact"
+        ],
+        "ar": [
+          "بوابة الطالب ما تفتح",
+          "نسيت كلمة المرور",
+          "إعادة تعيين كلمة المرور",
+          "إعداد الإيميل الجامعي",
+          "الواي فاي ما يشتغل",
+          "شبكة الجامعة",
+          "دخول منصة التعليم",
+          "حسابي مقفل",
+          "تفعيل الحساب",
+          "رمز التحقق",
+          "توثيق ثنائي",
+          "التواصل مع الدعم الفني"
+        ]
+      },
+      "responses": {
+        "en": [
+          "For portal/email/LMS issues, start with the password reset page (if available). If your account is locked, contact IT support with your student ID.",
+          "If Wi‑Fi isn’t working, confirm you’re using the official SSID and that your credentials are correct; then try forgetting the network and reconnecting.",
+          "Tell me which system you’re trying to access (portal/email/LMS/Wi‑Fi) and the exact error message for faster troubleshooting."
+        ],
+        "ar": [
+          "لمشاكل البوابة/الإيميل/المنصة ابدأ بصفحة إعادة تعيين كلمة المرور (إن وُجدت). إذا كان الحساب مقفل تواصل مع الدعم الفني مع رقمك الجامعي.",
+          "إذا لم يعمل الواي فاي تأكد أنك تستخدم اسم الشبكة الرسمي وأن بيانات الدخول صحيحة، ثم جرّب نسيان الشبكة وإعادة الاتصال.",
+          "اذكر النظام الذي تحاول الدخول إليه (بوابة/إيميل/منصة/واي فاي) ورسالة الخطأ لتشخيص أسرع."
+        ]
+      }
+    }
+  ]
+}
+
+

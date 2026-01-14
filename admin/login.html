@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Admin Login • Academic Support Chatbot</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand__title">Admin Login</div>
+          <div class="brand__subtitle">Frontend-only demo authentication</div>
+        </div>
+        <div class="topbar__actions">
+          <a class="btn btn--ghost" href="../index.html">Back to chat</a>
+        </div>
+      </header>
+
+      <main class="main" style="grid-template-columns: 1fr; max-width: 760px;">
+        <section class="chat" style="min-height: auto;">
+          <div class="chat__meta">
+            Demo credentials: <code>admin</code> / <code>admin123</code>
+          </div>
+          <div class="chat__messages" style="gap:12px;">
+            <div class="card">
+              <div class="card__title">Sign in</div>
+              <div class="card__text">
+                This is <strong>not secure</strong>. It only gates the dashboard in the browser.
+                For real security, move auth to the backend.
+              </div>
+            </div>
+
+            <form class="card" id="loginForm">
+              <label class="field">
+                <span class="field__label">Username</span>
+                <input id="username" class="composer__input" type="text" autocomplete="username" />
+              </label>
+              <div style="height:10px;"></div>
+              <label class="field">
+                <span class="field__label">Password</span>
+                <input id="password" class="composer__input" type="password" autocomplete="current-password" />
+              </label>
+              <div style="height:14px;"></div>
+              <div style="display:flex; gap:10px; justify-content:flex-end;">
+                <button class="btn btn--primary" type="submit">Login</button>
+              </div>
+              <div id="error" class="meta" style="color: var(--danger); margin-top:10px;"></div>
+            </form>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="../assets/admin.js"></script>
+  </body>
+</html>
+
+
