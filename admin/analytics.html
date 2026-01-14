@@ -171,7 +171,13 @@
     </div>
 
     <script>
-      const API_URL = localStorage.getItem('iasc_api_url_v1') || 'http://127.0.0.1:5000';
+      // Backend API URL - Railway deployment
+      const BACKEND_API_URL = 'https://backend-production-3e3b.up.railway.app';
+      const LOCAL_API_URL = 'http://127.0.0.1:5000';
+      const DEFAULT_API_URL = (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") 
+        ? LOCAL_API_URL 
+        : BACKEND_API_URL;
+      const API_URL = localStorage.getItem('iasc_api_url_v1') || DEFAULT_API_URL;
       const API_KEY = localStorage.getItem('iasc_api_key_v1') || '';
 
       async function fetchAnalytics() {

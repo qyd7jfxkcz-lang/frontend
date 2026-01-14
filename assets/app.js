@@ -12,7 +12,14 @@ const API_URL_KEY = "iasc_api_url_v1";
 const API_KEY_KEY = "iasc_api_key_v1";
 const PROFILE_KEY = "iasc_profile_v1";
 const THEME_KEY = "iasc_theme_v1"; // "dark" | "light"
-const DEFAULT_API_URL = "http://127.0.0.1:5000/chat";
+// Backend API URL - Railway deployment
+const BACKEND_API_URL = "https://backend-production-3e3b.up.railway.app/chat";
+// Local development fallback
+const LOCAL_API_URL = "http://127.0.0.1:5000/chat";
+// Auto-detect: use Railway URL if not on localhost, otherwise use local
+const DEFAULT_API_URL = (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") 
+  ? LOCAL_API_URL 
+  : BACKEND_API_URL;
 const API_TIMEOUT_MS = 12000;
 const API_RETRIES = 2;
 
